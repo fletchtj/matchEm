@@ -1,0 +1,26 @@
+<head>
+    <title>matchEm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron:400,900' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="user-settings-wrapper">
+        {{#if currentUser}}
+            <span class="toggle-edit">Settings</span> &nbsp;
+            <span class="octicon octicon-primitive-dot"></span> &nbsp;
+        {{/if}}
+        {{> loginButtons align="right"}}
+    </div>
+    <div class="container">
+        {{#unless editingMode}}
+            {{> frontView }}
+        {{else}}
+            {{#if currentUser}}
+                {{> backView}}
+            {{/if}}
+        {{/unless}}
+    </div>
+</body>
